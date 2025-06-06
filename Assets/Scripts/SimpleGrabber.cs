@@ -9,10 +9,17 @@ public class SimpleGrabber : MonoBehaviour
     public LayerMask grabbableLayer;
     public InputActionProperty grabAction;
 
+    [Header("Velocity Tracking")]
+    public Transform handTransform; // Assign your controller or hand transform
+    private readonly Queue<(Vector3 pos, float time)> positionHistory = new();
+    public int positionSampleCount = 10;
+
     private Rigidbody heldRb;
     private Transform attachPoint;
-    private Queue<Vector3> velocityHistory = new();
-    private int velocitySampleCount = 5;
+
+    [Range(0.1f, 3f)]
+    public float throwForceMultiplier = 1.3f;
+
 
     void Start()
     {
@@ -21,6 +28,18 @@ public class SimpleGrabber : MonoBehaviour
         attachPoint = new GameObject("AttachPoint").transform;
         attachPoint.SetParent(transform);
         attachPoint.localPosition = Vector3.zero;
+        attachPoint.localRotation = Quaternion.identity;
+    }
+
+    void LateUpdate()
+    {
+        if (heldRb != null)
+        {
+            // Track hand position + time
+            positionHistory.Enqueue((handTransform.position, Time.time));
+            if (positionHistory.Count > positionSampleCount)
+                positionHistory.Dequeue();
+        }
     }
 
     void FixedUpdate()
@@ -34,14 +53,9 @@ public class SimpleGrabber : MonoBehaviour
 
         if (heldRb != null)
         {
-            // Record velocity history for throw calculation
-            velocityHistory.Enqueue((attachPoint.position - heldRb.position) / Time.fixedDeltaTime);
-            if (velocityHistory.Count > velocitySampleCount)
-                velocityHistory.Dequeue();
-
-            // Simple physics follow
-            Vector3 targetVel = (attachPoint.position - heldRb.position) * 50f;
-            heldRb.linearVelocity = targetVel;
+            Vector3 followVelocity = (attachPoint.position - heldRb.position) / Time.fixedDeltaTime;
+            heldRb.linearVelocity = followVelocity;
+            heldRb.angularVelocity = Vector3.zero;
         }
     }
 
@@ -52,24 +66,58 @@ public class SimpleGrabber : MonoBehaviour
         {
             heldRb = hits[0].attachedRigidbody;
             if (heldRb != null)
+            {
                 heldRb.collisionDetectionMode = CollisionDetectionMode.Continuous;
+                heldRb.interpolation = RigidbodyInterpolation.Interpolate;
+                heldRb.useGravity = true;
+                positionHistory.Clear();
+            }
         }
     }
 
     void Release()
     {
-        Vector3 avgVelocity = Vector3.zero;
-        foreach (var vel in velocityHistory)
-            avgVelocity += vel;
-        avgVelocity /= Mathf.Max(velocityHistory.Count, 1);
-
-        ThrowTuner tuner = heldRb.GetComponent<ThrowTuner>();
-        if (tuner != null)
-            tuner.TuneThrow(avgVelocity, transform);
+        if (positionHistory.Count < 2)
+        {
+            heldRb.linearVelocity = Vector3.zero;
+        }
         else
-            heldRb.linearVelocity = avgVelocity;
+        {
+            var samples = new List<(Vector3 pos, float time)>(positionHistory);
+            var first = samples[0];
+            var last = samples[^1];
+
+            float deltaTime = last.time - first.time;
+            if (deltaTime <= 0f)
+                deltaTime = Time.fixedDeltaTime; // fallback
+
+            Vector3 velocity = (last.pos - first.pos) / deltaTime;
+
+            // Apply vertical dampening
+            velocity.y *= 0.75f;
+
+            // Apply forward boost based on hand direction
+            Vector3 handForward = handTransform.forward;
+            float forwardFactor = Vector3.Dot(velocity.normalized, handForward);
+            velocity += handForward * forwardFactor * 0.5f; // Tune this multiplier
+
+            // Clamp to max throw speed
+            velocity = Vector3.ClampMagnitude(velocity, 8f);
+
+            // Add subtle lift
+            velocity.y += 0.5f;
+
+            // Apply user-defined multiplier
+            velocity *= throwForceMultiplier;
+
+            Debug.Log($"Throw velocity: {velocity} | Magnitude: {velocity.magnitude}");
+
+            heldRb.linearVelocity = velocity;
+
+        }
 
         heldRb = null;
-        velocityHistory.Clear();
+        positionHistory.Clear();
     }
+
 }
