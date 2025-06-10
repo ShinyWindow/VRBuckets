@@ -12,6 +12,7 @@ public class Ball : MonoBehaviour
     private int zoneThrownFrom = 1;
     private bool scored = false;
     private PlayerScore thrower;
+    private PlayerScore lastThrower;
     private bool hasBeenThrown = false;
 
 
@@ -30,6 +31,8 @@ public class Ball : MonoBehaviour
 
     private void OnGrabbed(SelectEnterEventArgs args)
     {
+        lastThrower = null;
+
         var view = GetComponent<RealtimeView>();
 
         if (hasBeenThrown && !scored)
@@ -40,8 +43,8 @@ public class Ball : MonoBehaviour
                 var score = avatar.GetComponent<PlayerScore>();
                 if (score != null)
                 {
-                    Debug.Log("[Ball] Missed last shot — resetting combo.");
-                    score.ResetCombo();
+                    /*Debug.Log("[Ball] Missed last shot — resetting combo.");
+                    score.ResetCombo();*/
                 }
             }
         }
@@ -83,6 +86,14 @@ public class Ball : MonoBehaviour
         }
 
         Debug.Log($"[Ball] Throw position: {throwPosition}, Zone: {zoneThrownFrom}");
+        var avatarManager = FindObjectOfType<RealtimeAvatarManager>();
+        if (view != null && avatarManager.avatars.TryGetValue(view.ownerID, out var avatar))
+        {
+            lastThrower = avatar.GetComponent<PlayerScore>();
+        }
+
+
+
     }
 
 
@@ -131,4 +142,21 @@ public class Ball : MonoBehaviour
         hasBeenThrown = false;
 
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!scored && hasBeenThrown && collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("hit ground :(");
+
+            if (lastThrower != null)
+            {
+                Debug.Log("[Ball] Hit the ground without scoring — resetting combo.");
+                lastThrower.ResetCombo();
+            }
+
+            hasBeenThrown = false; // Prevent double trigger
+        }
+    }
+
 }

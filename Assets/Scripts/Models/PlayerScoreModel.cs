@@ -1,4 +1,4 @@
-using Normal.Realtime.Serialization;
+﻿using Normal.Realtime.Serialization;
 
 [RealtimeModel(createMetaModel: true)]
 public partial class PlayerScoreModel
@@ -9,4 +9,6 @@ public partial class PlayerScoreModel
     [RealtimeProperty(2, true, true)]
     private int _combo;
 
+    [RealtimeProperty(3, true, true)]
+    private bool _lastShotScored; // ✅ Add this line
 }
