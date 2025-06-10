@@ -134,17 +134,6 @@ public class PlayerScore : RealtimeComponent<PlayerScoreModel>
         Debug.Log($"[PlayerScore][{name}] Score and combo reset.");
     }
 
-    public void RecordShotResult(bool scored)
-    {
-        if (model == null) return;
-
-        model.lastShotScored = scored;
-    }
-
-    public bool WasLastShotMissed()
-    {
-        return !model.lastShotScored;
-    }
 
 
 }

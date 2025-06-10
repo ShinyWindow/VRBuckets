@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerHand
   - Basketball
+  - Ground
   layers:
   - Default
   - TransparentFX

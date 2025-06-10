@@ -119,6 +119,42 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &26313718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26313719}
+  m_Layer: 0
+  m_Name: 3 Point Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &26313719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26313718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 961111843}
+  - {fileID: 270574192}
+  - {fileID: 466699504}
+  - {fileID: 1218972547}
+  - {fileID: 1992094623}
+  m_Father: {fileID: 248460376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46275665
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +253,7 @@ GameObject:
   - component: {fileID: 74672560}
   - component: {fileID: 74672559}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Wall Neon Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +339,7 @@ GameObject:
   - component: {fileID: 97623205}
   - component: {fileID: 97623204}
   m_Layer: 0
-  m_Name: 2 point (2)
+  m_Name: 2 Point Rear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,11 +354,11 @@ Transform:
   m_GameObject: {fileID: 97623202}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18, y: 0, z: 2.23}
-  m_LocalScale: {x: 5.7954125, y: 5.890113, z: 1.065016}
+  m_LocalPosition: {x: 0, y: 0.25, z: 2.23}
+  m_LocalScale: {x: 10.832625, y: 5.890113, z: 1.065016}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 248460376}
+  m_Father: {fileID: 158170206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &97623204
 BoxCollider:
@@ -363,7 +399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113518853}
   m_Layer: 0
-  m_Name: Lower Wall (1)
+  m_Name: Wall Neon Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,7 +576,7 @@ GameObject:
   - component: {fileID: 124452677}
   - component: {fileID: 124452676}
   m_Layer: 0
-  m_Name: Timer Background
+  m_Name: Scoreboard Countdown Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,6 +843,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149714701}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &158170205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 158170206}
+  m_Layer: 0
+  m_Name: 2 Point Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &158170206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158170205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 871049214}
+  - {fileID: 1902334341}
+  - {fileID: 97623203}
+  m_Father: {fileID: 248460376}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &161092580
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +889,7 @@ GameObject:
   - component: {fileID: 161092583}
   - component: {fileID: 161092582}
   m_Layer: 0
-  m_Name: Choose
+  m_Name: Gamemode Settings Explanation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,7 +1120,7 @@ GameObject:
   - component: {fileID: 166405724}
   - component: {fileID: 166405723}
   m_Layer: 0
-  m_Name: Table
+  m_Name: Gamemode Selection Table
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1277,7 +1347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 204397175}
   m_Layer: 0
-  m_Name: Neon
+  m_Name: Backboard Neon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1323,7 +1393,7 @@ GameObject:
   - component: {fileID: 220957855}
   - component: {fileID: 220957854}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Scoreboard Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1427,7 +1497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222226687}
   m_Layer: 0
-  m_Name: Wall Lower
+  m_Name: Walls Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1688,10 +1758,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 871049214}
-  - {fileID: 1902334341}
-  - {fileID: 97623203}
-  - {fileID: 961111843}
+  - {fileID: 158170206}
+  - {fileID: 26313719}
   m_Father: {fileID: 1770457038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &253148847
@@ -1780,6 +1848,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253148847}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &270574191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270574192}
+  - component: {fileID: 270574194}
+  - component: {fileID: 270574193}
+  m_Layer: 0
+  m_Name: 3 Point Right Short
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &270574192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270574191}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.64, y: 0, z: 2.17}
+  m_LocalScale: {x: 2.3641, y: 6.4141, z: 1.3216}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 26313719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &270574193
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270574191}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &270574194
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270574191}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &279480394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1922,7 @@ GameObject:
   - component: {fileID: 279480398}
   - component: {fileID: 279480397}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,7 +2008,7 @@ GameObject:
   - component: {fileID: 285624974}
   - component: {fileID: 285624973}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Wall Neon Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1952,37 +2082,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285624970}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &294476057
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 294476058}
-  m_Layer: 0
-  m_Name: Reset Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &294476058
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 294476057}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 654698391}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308890476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,7 +2094,7 @@ GameObject:
   - component: {fileID: 308890480}
   - component: {fileID: 308890479}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2082,7 +2181,7 @@ GameObject:
   - component: {fileID: 382596617}
   - component: {fileID: 382596616}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Wall Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2189,7 +2288,7 @@ GameObject:
   - component: {fileID: 393390822}
   - component: {fileID: 393390821}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Wall Neon Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2276,7 +2375,7 @@ GameObject:
   - component: {fileID: 395423238}
   - component: {fileID: 395423235}
   m_Layer: 0
-  m_Name: Entry
+  m_Name: Hoop Entry Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2352,7 +2451,7 @@ GameObject:
   - component: {fileID: 401730632}
   - component: {fileID: 401730631}
   m_Layer: 0
-  m_Name: Player 1 Background
+  m_Name: Scoreboard Player 1 Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2493,7 +2592,7 @@ GameObject:
   - component: {fileID: 408757858}
   - component: {fileID: 408757857}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2584,7 +2683,7 @@ GameObject:
   - component: {fileID: 457988079}
   - component: {fileID: 457988080}
   m_Layer: 0
-  m_Name: Time Attack Button
+  m_Name: Time Attack Gamemode Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2599,7 +2698,7 @@ Transform:
   m_GameObject: {fileID: 457988071}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.481, y: -0.335, z: -0.171}
+  m_LocalPosition: {x: 0.459, y: -0.318, z: -0.168}
   m_LocalScale: {x: 0.13177292, y: 0.13177292, z: 0.13177292}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2945,6 +3044,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460408747}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &466699503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 466699504}
+  - component: {fileID: 466699506}
+  - component: {fileID: 466699505}
+  m_Layer: 0
+  m_Name: 3 Point Left Short
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &466699504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466699503}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.64, y: 0, z: 2.17}
+  m_LocalScale: {x: 2.3641, y: 6.4141, z: 1.3216}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 26313719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &466699505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466699503}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &466699506
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466699503}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &474090899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2957,7 +3118,7 @@ GameObject:
   - component: {fileID: 474090902}
   - component: {fileID: 474090901}
   m_Layer: 0
-  m_Name: Free Play
+  m_Name: Free Play Gamemode Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3094,7 +3255,7 @@ GameObject:
   - component: {fileID: 497052551}
   - component: {fileID: 497052552}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: Hoop Exit Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3329,7 +3490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 568873350}
   m_Layer: 0
-  m_Name: Lower Wall
+  m_Name: Wall Neon Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3366,7 +3527,7 @@ GameObject:
   - component: {fileID: 605731985}
   - component: {fileID: 605731984}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3453,7 +3614,7 @@ GameObject:
   - component: {fileID: 646379724}
   - component: {fileID: 646379723}
   m_Layer: 0
-  m_Name: Wall (5)
+  m_Name: Wall Upper (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3581,8 +3742,8 @@ Transform:
   - {fileID: 4520455137959630}
   - {fileID: 1122807073}
   - {fileID: 717552321}
-  - {fileID: 294476058}
   - {fileID: 930992820}
+  - {fileID: 766202251}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &662840780
@@ -3597,7 +3758,7 @@ GameObject:
   - component: {fileID: 662840784}
   - component: {fileID: 662840783}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Wall Neon Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3681,7 +3842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 665444577}
   m_Layer: 0
-  m_Name: WallUpper
+  m_Name: Walls Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3717,9 +3878,8 @@ GameObject:
   - component: {fileID: 667105601}
   - component: {fileID: 667105604}
   - component: {fileID: 667105603}
-  - component: {fileID: 667105602}
   m_Layer: 0
-  m_Name: Ring 2
+  m_Name: Hoop Visual Ring (middle)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3740,28 +3900,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 529971511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &667105602
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667105600}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 958499257}
 --- !u!23 &667105603
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3827,7 +3965,7 @@ GameObject:
   - component: {fileID: 686949077}
   - component: {fileID: 686949076}
   m_Layer: 5
-  m_Name: Player 2 Text
+  m_Name: Player 2  Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4085,7 +4223,7 @@ GameObject:
   - component: {fileID: 713576592}
   - component: {fileID: 713576593}
   m_Layer: 5
-  m_Name: Player 1 Text
+  m_Name: Player 1 Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4257,7 +4395,12 @@ MonoBehaviour:
   - {fileID: 871049211}
   - {fileID: 1902334338}
   - {fileID: 97623204}
-  zone3Area: {fileID: 961111840}
+  zone3Areas:
+  - {fileID: 961111840}
+  - {fileID: 270574193}
+  - {fileID: 466699505}
+  - {fileID: 1218972548}
+  - {fileID: 1992094624}
 --- !u!1 &718039131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,7 +4414,7 @@ GameObject:
   - component: {fileID: 718039134}
   - component: {fileID: 718039133}
   m_Layer: 0
-  m_Name: Gamemode Canvas
+  m_Name: Gamemode Selection Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4575,12 +4718,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766202249}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 654698391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &766202252
 MonoBehaviour:
@@ -4629,7 +4772,7 @@ GameObject:
   - component: {fileID: 767020537}
   - component: {fileID: 767020536}
   m_Layer: 5
-  m_Name: Time Title
+  m_Name: Countdown Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4765,7 +4908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 774312037}
   m_Layer: 5
-  m_Name: Clock
+  m_Name: Countdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4804,7 +4947,7 @@ GameObject:
   - component: {fileID: 811149800}
   - component: {fileID: 811149799}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Wall Neon Lower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4925,7 +5068,7 @@ GameObject:
   - component: {fileID: 842505706}
   - component: {fileID: 842505705}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5053,7 +5196,7 @@ GameObject:
   - component: {fileID: 871049213}
   - component: {fileID: 871049211}
   m_Layer: 0
-  m_Name: 2 point
+  m_Name: 2 Point Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5097,11 +5240,11 @@ Transform:
   m_GameObject: {fileID: 871049210}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.22, y: 1.13, z: -1.02}
-  m_LocalScale: {x: 5.3341775, y: 4.562052, z: 7.4999657}
+  m_LocalPosition: {x: 4.424, y: 1.13, z: -1.25}
+  m_LocalScale: {x: 3.8929625, y: 4.562052, z: 5.6347523}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 248460376}
+  m_Father: {fileID: 158170206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905590647
 GameObject:
@@ -5698,7 +5841,7 @@ GameObject:
   - component: {fileID: 959559396}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5805,7 +5948,7 @@ GameObject:
   - component: {fileID: 961111842}
   - component: {fileID: 961111840}
   m_Layer: 0
-  m_Name: 3 point
+  m_Name: 3 Point Rear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5853,7 +5996,7 @@ Transform:
   m_LocalScale: {x: 17.086863, y: 6.537365, z: 7.7069297}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 248460376}
+  m_Father: {fileID: 26313719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007065947
 GameObject:
@@ -5951,7 +6094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1019946035}
   m_Layer: 5
-  m_Name: Player2
+  m_Name: Player 2 Scores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5971,8 +6114,8 @@ RectTransform:
   m_Children:
   - {fileID: 686949075}
   - {fileID: 1638346183}
-  - {fileID: 2006296417}
   - {fileID: 1692274289}
+  - {fileID: 2006296417}
   - {fileID: 1864681248}
   m_Father: {fileID: 220957853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5994,7 +6137,7 @@ GameObject:
   - component: {fileID: 1027107362}
   - component: {fileID: 1027107361}
   m_Layer: 0
-  m_Name: Ring
+  m_Name: Hoop Functional Ring (top)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6102,7 +6245,7 @@ GameObject:
   - component: {fileID: 1027661128}
   - component: {fileID: 1027661127}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6274,7 +6417,7 @@ GameObject:
   - component: {fileID: 1051652723}
   - component: {fileID: 1051652722}
   m_Layer: 5
-  m_Name: Player 1 Streak Title
+  m_Name: Player 1 Streak Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6408,7 +6551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1053389342}
   m_Layer: 0
-  m_Name: Neon
+  m_Name: Walls Neon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6608,7 +6751,7 @@ GameObject:
   - component: {fileID: 1085746198}
   - component: {fileID: 1085746197}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6694,7 +6837,7 @@ GameObject:
   - component: {fileID: 1089375756}
   - component: {fileID: 1089375755}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Wall Neon Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7164,7 +7307,7 @@ GameObject:
   - component: {fileID: 1157754264}
   - component: {fileID: 1157754263}
   m_Layer: 0
-  m_Name: Wall (6)
+  m_Name: Wall Upper (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7271,7 +7414,7 @@ GameObject:
   - component: {fileID: 1180134327}
   - component: {fileID: 1180134326}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7358,7 +7501,7 @@ GameObject:
   - component: {fileID: 1193703980}
   - component: {fileID: 1193703979}
   m_Layer: 0
-  m_Name: Wall (7)
+  m_Name: Wall Upper (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7465,7 +7608,7 @@ GameObject:
   - component: {fileID: 1216419382}
   - component: {fileID: 1216419381}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7538,6 +7681,68 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216419378}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1218972546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218972547}
+  - component: {fileID: 1218972549}
+  - component: {fileID: 1218972548}
+  m_Layer: 0
+  m_Name: 3 Point Left Long
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218972547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218972546}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.12, y: 0, z: -1.26}
+  m_LocalScale: {x: 1.3890979, y: 6.4141, z: 6.053717}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 26313719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1218972548
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218972546}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1218972549
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218972546}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1226084667
 GameObject:
@@ -7898,7 +8103,7 @@ GameObject:
   - component: {fileID: 1349698502}
   - component: {fileID: 1349698501}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Wall Neon Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7989,7 +8194,7 @@ GameObject:
   - component: {fileID: 1351137477}
   - component: {fileID: 1351137479}
   m_Layer: 0
-  m_Name: Free Play button
+  m_Name: Free Play Gamemode Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8325,7 +8530,7 @@ GameObject:
   - component: {fileID: 1391832365}
   - component: {fileID: 1391832364}
   m_Layer: 5
-  m_Name: Winner
+  m_Name: Scoreboard Winner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8548,7 +8753,7 @@ GameObject:
   - component: {fileID: 1395273633}
   - component: {fileID: 1395273632}
   m_Layer: 0
-  m_Name: Wall (4)
+  m_Name: Wall Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8684,7 +8889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492564193}
   m_Layer: 0
-  m_Name: Ball Spawn Point
+  m_Name: Ball Spawn Transform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8698,56 +8903,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492564192}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 1.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1527010046
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1527010048}
-  - component: {fileID: 1527010047}
-  m_Layer: 0
-  m_Name: GameObject (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1527010047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527010046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d998250cd3d2f434dabb7fc347dd1796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1527010048
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1527010046}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.33611, y: 3.24012, z: -4.24118}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1770457038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1582936619
 GameObject:
@@ -8762,7 +8923,7 @@ GameObject:
   - component: {fileID: 1582936622}
   - component: {fileID: 1582936621}
   m_Layer: 0
-  m_Name: Main Background
+  m_Name: Scoreboard Grey Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8870,7 +9031,7 @@ GameObject:
   - component: {fileID: 1589041531}
   - component: {fileID: 1589041530}
   m_Layer: 0
-  m_Name: Player 2 Background
+  m_Name: Scoreboard Player 2 Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9063,7 +9224,7 @@ GameObject:
   - component: {fileID: 1638346185}
   - component: {fileID: 1638346184}
   m_Layer: 5
-  m_Name: Player 2 Score Title
+  m_Name: Player 2 Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9228,7 +9389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1659267904}
   m_Layer: 0
-  m_Name: Chalk
+  m_Name: Court Markings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9264,7 +9425,7 @@ GameObject:
   - component: {fileID: 1676049741}
   - component: {fileID: 1676049740}
   m_Layer: 0
-  m_Name: Cube (9)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9350,7 +9511,7 @@ GameObject:
   - component: {fileID: 1677577664}
   - component: {fileID: 1677577663}
   m_Layer: 5
-  m_Name: Player 1 Score Title
+  m_Name: Player 1 Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9489,7 +9650,7 @@ GameObject:
   - component: {fileID: 1692274291}
   - component: {fileID: 1692274290}
   m_Layer: 5
-  m_Name: Player 2 Streak Title
+  m_Name: Player 2 Streak Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9627,7 +9788,7 @@ GameObject:
   - component: {fileID: 1694016495}
   - component: {fileID: 1694016494}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Wall Neon Upper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9701,50 +9862,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694016491}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1701524538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1701524540}
-  - component: {fileID: 1701524539}
-  m_Layer: 0
-  m_Name: Change Gamemode
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1701524539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701524538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b73dc3f747cff37479e255f84627c823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1701524540
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701524538}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1707642274
 GameObject:
   m_ObjectHideFlags: 0
@@ -9757,7 +9874,7 @@ GameObject:
   - component: {fileID: 1707642277}
   - component: {fileID: 1707642276}
   m_Layer: 0
-  m_Name: Time Attack Duel
+  m_Name: Time Attack Gamemode Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10031,7 +10148,7 @@ GameObject:
   - component: {fileID: 1720497138}
   - component: {fileID: 1720497137}
   m_Layer: 5
-  m_Name: Gamemode
+  m_Name: Scoreboard Gamemode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10167,7 +10284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1770457038}
   m_Layer: 0
-  m_Name: Room
+  m_Name: Environment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10186,6 +10303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1492564193}
   - {fileID: 1935182920}
   - {fileID: 1354959884}
   - {fileID: 1336779268}
@@ -10291,7 +10409,7 @@ GameObject:
   - component: {fileID: 1794005537}
   - component: {fileID: 1794005538}
   m_Layer: 0
-  m_Name: SmartBackboard
+  m_Name: Backboard Smart Convex Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10355,7 +10473,7 @@ GameObject:
   - component: {fileID: 1838075080}
   - component: {fileID: 1838075079}
   m_Layer: 0
-  m_Name: Wall (3)
+  m_Name: Wall Lower (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10462,7 +10580,7 @@ GameObject:
   - component: {fileID: 1843185089}
   - component: {fileID: 1843185088}
   m_Layer: 5
-  m_Name: Time
+  m_Name: Countdown Clock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10856,7 +10974,7 @@ GameObject:
   - component: {fileID: 1900705993}
   - component: {fileID: 1900705992}
   m_Layer: 0
-  m_Name: Ring 3
+  m_Name: Hoop Visual Ring (bottom)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10942,7 +11060,7 @@ GameObject:
   - component: {fileID: 1902334340}
   - component: {fileID: 1902334338}
   m_Layer: 0
-  m_Name: 2 point (1)
+  m_Name: 2 Point Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10986,11 +11104,11 @@ Transform:
   m_GameObject: {fileID: 1902334337}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.44, y: 0, z: -1.02}
-  m_LocalScale: {x: 5.7954125, y: 5.890113, z: 7.8451495}
+  m_LocalPosition: {x: -4.45, y: 0.99, z: -1.35}
+  m_LocalScale: {x: 3.8929625, y: 4.562052, z: 5.6347523}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 248460376}
+  m_Father: {fileID: 158170206}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1935182918
 GameObject:
@@ -11211,7 +11329,7 @@ GameObject:
   - component: {fileID: 1978961571}
   - component: {fileID: 1978961570}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11370,6 +11488,68 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980442554}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1992094622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1992094623}
+  - component: {fileID: 1992094625}
+  - component: {fileID: 1992094624}
+  m_Layer: 0
+  m_Name: 3 Point Right Long
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1992094623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992094622}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.09, y: 0, z: -1.26}
+  m_LocalScale: {x: 1.3890979, y: 6.4141, z: 6.053717}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 26313719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1992094624
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992094622}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1992094625
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992094622}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1994953920
 GameObject:
@@ -11603,7 +11783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081318901}
   m_Layer: 5
-  m_Name: Player1
+  m_Name: Player 1 Scores
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11623,8 +11803,8 @@ RectTransform:
   m_Children:
   - {fileID: 713576591}
   - {fileID: 1677577662}
-  - {fileID: 116560870}
   - {fileID: 1051652721}
+  - {fileID: 116560870}
   - {fileID: 1715419757}
   m_Father: {fileID: 220957853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11646,7 +11826,7 @@ GameObject:
   - component: {fileID: 2086613264}
   - component: {fileID: 2086613263}
   m_Layer: 0
-  m_Name: Wall (2)
+  m_Name: Wall Lower (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11753,7 +11933,7 @@ GameObject:
   - component: {fileID: 2100329564}
   - component: {fileID: 2100329563}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Backboard Neon Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11839,7 +12019,7 @@ GameObject:
   - component: {fileID: 2114451650}
   - component: {fileID: 2114451649}
   m_Layer: 5
-  m_Name: VR Buckets Match
+  m_Name: Scoreboard Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11976,7 +12156,7 @@ GameObject:
   - component: {fileID: 2114693066}
   - component: {fileID: 2114693065}
   m_Layer: 0
-  m_Name: Wall (1)
+  m_Name: Wall Lower (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12273,7 +12453,7 @@ GameObject:
   - component: {fileID: 911967594555663540}
   - component: {fileID: 7591786645811117052}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Backboard Visual 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12526,7 +12706,7 @@ GameObject:
   - component: {fileID: 6933112090492887564}
   - component: {fileID: 2287512571835841373}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Backboard Visual 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13190,7 +13370,7 @@ GameObject:
   - component: {fileID: 3187427931167632603}
   - component: {fileID: 8454568076780539062}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Backboard Visual 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13731,7 +13911,3 @@ SceneRoots:
   - {fileID: 1858637029}
   - {fileID: 1770457038}
   - {fileID: 3412924684049493855}
-  - {fileID: 766202251}
-  - {fileID: 1492564193}
-  - {fileID: 1701524540}
-  - {fileID: 1527010048}

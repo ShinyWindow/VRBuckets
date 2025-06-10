@@ -6,7 +6,7 @@ public class ZoneManager : MonoBehaviour
 
     [Header("Zone Areas")]
     public Collider[] zone2Areas;  // Assign multiple in Inspector
-    public Collider zone3Area;     // Single far zone
+    public Collider[] zone3Areas;  // Changed from single to array
 
     private void Awake()
     {
@@ -22,8 +22,14 @@ public class ZoneManager : MonoBehaviour
 
     public int GetZone(Vector3 position)
     {
-        if (zone3Area != null && zone3Area.bounds.Contains(position))
-            return 3;
+        if (zone3Areas != null)
+        {
+            foreach (var zone in zone3Areas)
+            {
+                if (zone != null && zone.bounds.Contains(position))
+                    return 3;
+            }
+        }
 
         if (zone2Areas != null)
         {
