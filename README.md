@@ -26,3 +26,7 @@ The hardest parts of the project mostly had to do with multiplayer syncing:
 ## Final Thoughts
 
 Even though it was challenging, I really enjoyed this project. I learned a lot about how multiplayer VR works and how to think about networking, ownership, and physics all at the same time. There's still more I’d love to add, but I’m proud of how it turned out within the time I had.
+
+## Screenshot
+
+![VRBuckets Gameplay](Assets/Images/gameplay_screenshot.png)
