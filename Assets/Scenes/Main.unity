@@ -915,12 +915,12 @@ MonoBehaviour:
   m_text: 'Please see above for descriptions of the two gamemodes.
 
 
-    You can
-    choose what gamemode you''d like to play by grabbing one of these two blocks:
+    Only the
+    first player can choose what gamemode you''d like to play by grabbing one of
+    these two blocks:
 
 
-    To
-    reset the game or scene, just grab either block'
+    To reset the game or scene, just grab either block'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
