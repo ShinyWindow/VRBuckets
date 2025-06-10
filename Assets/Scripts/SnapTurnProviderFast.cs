@@ -12,7 +12,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Locomotion.Turning
     /// </summary>
     /// <seealso cref="LocomotionProvider"/>
     /// <seealso cref="ContinuousTurnProvider"/>
-    [AddComponentMenu("XR/Locomotion/Snap Turn Provider", 11)]
+    [AddComponentMenu("XR/Locomotion/Snap Turn Provider Fast", 11)]
     public class SnapTurnProviderFast : LocomotionProvider
     {
         [SerializeField]
