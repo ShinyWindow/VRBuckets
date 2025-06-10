@@ -7,7 +7,8 @@ public class GameManager : RealtimeComponent<GameStateModel>
     public static GameManager Instance { get; private set; }
 
     public bool IsGameOver => model != null && model.isGameOver;
-    public double TimeAttackStartTime => model != null ? model.timeAttackStartTime : 0;
+    public double TimeAttackStartRoomTime => model != null ? model.timeAttackElapsedSeconds : 0;
+
 
 
     private void Awake()
@@ -91,10 +92,10 @@ public class GameManager : RealtimeComponent<GameStateModel>
 
     public void BeginTimeAttackIfNotStarted()
     {
-        if (realtime.clientID == 0 && model != null && model.timeAttackStartTime == 0)
+        if (realtime.clientID == 0 && model != null && model.timeAttackElapsedSeconds == 0)
         {
-            model.timeAttackStartTime = DateTime.UtcNow.Subtract(DateTime.UnixEpoch).TotalSeconds;
-            Debug.Log($"[GameManager] Time Attack started at {model.timeAttackStartTime}");
+            model.timeAttackElapsedSeconds = realtime.room.time;
+            Debug.Log($"[GameManager] Time Attack started at room time: {model.timeAttackElapsedSeconds}");
         }
     }
 
@@ -102,10 +103,11 @@ public class GameManager : RealtimeComponent<GameStateModel>
     {
         if (realtime.clientID == 0 && model != null)
         {
-            model.timeAttackStartTime = 0;
-            Debug.Log("[GameManager] TimeAttackStartTime reset.");
+            model.timeAttackElapsedSeconds = 0; // ✅ this is now used as startRoomTime
+            Debug.Log("[GameManager] TimeAttackStartRoomTime reset.");
         }
     }
+
 
 
 }

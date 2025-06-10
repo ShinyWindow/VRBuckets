@@ -108,12 +108,12 @@ public class ScoreboardManager : MonoBehaviour
             if (_gameManager.CurrentGameMode == GameMode.TimeAttack && !_gameManager.IsGameOver)
             {
                 var realtime = FindFirstObjectByType<Realtime>();
-                if (realtime != null && realtime.clientID == 0 && _gameManager.TimeAttackStartTime == 0)
+                if (realtime != null && realtime.clientID == 0 && _gameManager.TimeAttackStartRoomTime == 0)
                 {
                     _gameManager.BeginTimeAttackIfNotStarted(); // sets TimeAttackStartTime
                 }
 
-                if (_gameManager.TimeAttackStartTime > 0 && !_isCountingDown)
+                if (_gameManager.TimeAttackStartRoomTime > 0 && !_isCountingDown)
                 {
                     StartTimeAttackCountdown();
                 }
@@ -135,8 +135,9 @@ public class ScoreboardManager : MonoBehaviour
         // Update countdown timer if active
         if (_isCountingDown)
         {
-            double now = DateTime.UtcNow.Subtract(DateTime.UnixEpoch).TotalSeconds;
-            double start = _gameManager.TimeAttackStartTime;
+            var realtime = FindFirstObjectByType<Realtime>();
+            double now = realtime != null ? realtime.room.time : 0;
+            double start = _gameManager.TimeAttackStartRoomTime;
             float remaining = (float)(TimeAttackDuration - (now - start));
 
             if (remaining <= 0f)
@@ -145,7 +146,7 @@ public class ScoreboardManager : MonoBehaviour
                 _isCountingDown = false;
                 _gameManager.SetGameOver(true);
 
-                var realtime = FindFirstObjectByType<Realtime>();
+                
                 if (realtime != null && realtime.clientID == 0)
                 {
                     foreach (var ball in FindObjectsOfType<Ball>())

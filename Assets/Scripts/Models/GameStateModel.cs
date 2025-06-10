@@ -17,4 +17,7 @@ public partial class GameStateModel
 
     [RealtimeProperty(3, true, true)]
     private double _timeAttackStartTime; // ⏱️ Add this line
+    [RealtimeProperty(4, true, true)]
+    private double _timeAttackElapsedSeconds; // seconds since start
+
 }
