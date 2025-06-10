@@ -35,7 +35,7 @@ public class ScoreboardManager : MonoBehaviour
     private bool _isCountingDown = false;
     private float _countdownDisplayUpdateTimer = 0f;
     private const float CountdownDisplayUpdateInterval = 0.25f;
-    private const float TimeAttackDuration = 30f;
+    private const float TimeAttackDuration = 90f;
 
     private int lastScoreP1 = -1;
     private int lastScoreP2 = -1;
