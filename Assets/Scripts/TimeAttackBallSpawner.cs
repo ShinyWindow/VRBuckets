@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Normal.Realtime;
 
+
+// Spawns a basketball in Time Attack mode when the primary button is pressed
+// Instantiates the ball at the hand’s position using Normcore networking.
 public class TimeAttackBallSpawner : MonoBehaviour
 {
     public InputActionProperty spawnAction; // Assign Right Controller input

@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// Plays randomized bounce sounds when the basketball hits something with enough force,
+// adding audio variation and feedback based on impact velocity.
 [RequireComponent(typeof(AudioSource), typeof(Rigidbody))]
 public class BasketballSound : MonoBehaviour
 {

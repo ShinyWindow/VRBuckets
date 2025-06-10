@@ -1,24 +1,33 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using Normal.Realtime;
 using System.Collections;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
-[RequireComponent(typeof(XRGrabInteractable))]
-public class GameModeHoverButton : MonoBehaviour
+// This component handles both game mode switching via grab interaction and changing material color to indicate the active game mode.
+[RequireComponent(typeof(XRGrabInteractable), typeof(MeshRenderer))]
+public class GameModeButton : MonoBehaviour
 {
+    [Header("Game Mode Settings")]
     public GameMode modeToSet;
-    public Transform ballSpawnPoint;
     public string basketballPrefabName = "Basketball";
+    public Transform ballSpawnPoint;
+
+    [Header("Visual Feedback")]
+    public Material activeMaterial;
+    public Material inactiveMaterial;
 
     private GameManager _gameManager;
     private ResetSignal _resetSignal;
     private ScoreboardManager _scoreboardManager;
+    private MeshRenderer _meshRenderer;
+    private GameMode _lastMode = (GameMode)(-1);
 
     private void Awake()
     {
         _gameManager = GameManager.Instance;
         _resetSignal = FindFirstObjectByType<ResetSignal>();
+        _meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void Start()
@@ -28,62 +37,39 @@ public class GameModeHoverButton : MonoBehaviour
         _scoreboardManager = FindFirstObjectByType<ScoreboardManager>();
     }
 
-
     private void OnEnable()
     {
-        var interactable = GetComponent<XRGrabInteractable>();
-        if (interactable != null)
-            interactable.selectEntered.AddListener(OnSelectEnter);
+        GetComponent<XRGrabInteractable>().selectEntered.AddListener(OnSelectEnter);
     }
 
     private void OnDisable()
     {
-        var interactable = GetComponent<XRGrabInteractable>();
-        if (interactable != null)
-            interactable.selectEntered.RemoveListener(OnSelectEnter);
+        GetComponent<XRGrabInteractable>().selectEntered.RemoveListener(OnSelectEnter);
     }
 
     private void Update()
     {
-        if (_gameManager == null)
-            _gameManager = GameManager.Instance;
+        if (_gameManager == null) return;
+
+        GameMode current = _gameManager.CurrentGameMode;
+        if (current == _lastMode) return;
+
+        _lastMode = current;
+        _meshRenderer.material = (current == modeToSet) ? activeMaterial : inactiveMaterial;
     }
-
-
-
 
     private void OnSelectEnter(SelectEnterEventArgs args)
     {
-        Debug.Log("[GameModeHoverButton] SelectEnter fired.");
-
-        if (_gameManager == null)
-            Debug.Log("[GameModeHoverButton] Skipped: GameManager is null.");
-        else
-            Debug.Log($"[GameModeHoverButton] clientID = {_gameManager.realtime.clientID}");
-
         if (_gameManager == null || _gameManager.realtime.clientID != 0)
-        {
-            Debug.Log("[GameModeHoverButton] Activation skipped due to conditions.");
             return;
-        }
 
-        Debug.Log($"[GameModeHoverButton] GRAB detected for {modeToSet}. Resetting game.");
         _gameManager.SetGameOver(false);
-        _gameManager.SetWinner("");
         _scoreboardManager?.CancelCountdown();
-
-        // Reset synced timer explicitly
-        if (_gameManager.realtime.clientID == 0)
-            _gameManager.ResetTimeAttackStartTime();
-
-
+        _gameManager.ResetTimeAttackStartTime();
         _gameManager.SetGameMode(modeToSet);
-
 
         StartCoroutine(ResetBasketballsAndSignal());
     }
-
-
 
     private IEnumerator ResetBasketballsAndSignal()
     {
@@ -95,7 +81,6 @@ public class GameModeHoverButton : MonoBehaviour
                 if (!rt.isOwnedLocallySelf)
                     rt.RequestOwnership();
 
-                // Wait one frame to ensure ownership is transferred
                 yield return null;
 
                 if (rt.isOwnedLocallySelf)
@@ -103,7 +88,6 @@ public class GameModeHoverButton : MonoBehaviour
             }
         }
 
-        // Wait one more frame to ensure all objects are fully cleaned up
         yield return null;
 
         if (ballSpawnPoint != null)
@@ -115,11 +99,7 @@ public class GameModeHoverButton : MonoBehaviour
             );
         }
 
-        if (_resetSignal != null && _resetSignal.SignalModel != null)
-        {
+        if (_resetSignal?.SignalModel != null)
             _resetSignal.SignalModel.resetCounter++;
-            Debug.Log("[GameModeHoverButton] Reset signal sent.");
-        }
     }
-
 }

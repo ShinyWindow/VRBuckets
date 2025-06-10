@@ -1,5 +1,9 @@
 using UnityEngine;
 
+
+// Determines which scoring zone a position falls into during gameplay.
+// Returns zone 3, 2, or 1 based on collider areas set in the inspector.
+
 public class ZoneManager : MonoBehaviour
 {
     public static ZoneManager Instance;

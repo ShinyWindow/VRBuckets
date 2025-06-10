@@ -4,9 +4,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+// Overrides the default XR grab throw behavior to compute a custom throw velocity
+// based on recent hand movement, producing more realistic and tunable throws.
 public class CustomThrowTuner : MonoBehaviour
 {
-    public Transform handTransform;
+    private Transform handTransform;
     public float throwForceMultiplier = 1.3f;
 
     private XRGrabInteractable grabInteractable;

@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 using Normal.Realtime;
 using System.Collections;
 
+// Handles resetting the game state when the spacebar is pressed.
+// Destroys all basketballs, spawns a new one, and increments the shared reset signal.
+// This script is primarily used for debugging.
 public class ScoreResetManager : MonoBehaviour
 {
     private InputAction _resetAction;
@@ -26,6 +29,7 @@ public class ScoreResetManager : MonoBehaviour
         _resetAction.Disable();
     }
 
+
     private IEnumerator ResetGame()
     {
         if (_resetSignal == null || _resetSignal.SignalModel == null)
@@ -34,7 +38,7 @@ public class ScoreResetManager : MonoBehaviour
             yield break;
         }
 
-        // 🔥 Destroy all basketballs
+        
         var basketballs = FindObjectsOfType<Ball>();
         foreach (var ball in basketballs)
         {
@@ -45,16 +49,16 @@ public class ScoreResetManager : MonoBehaviour
             }
         }
 
-        // 🕒 Wait 1 frame to ensure destruction is synced
+        
         yield return null;
 
-        // 🆕 Respawn one new basketball
+        
         if (spawnPoint != null)
         {
             Realtime.Instantiate(basketballPrefabName, spawnPoint.position, spawnPoint.rotation);
         }
 
-        // 📢 Send reset signal
+        
         _resetSignal.SignalModel.resetCounter++;
         Debug.Log("[ScoreResetManager] All basketballs removed and reset signal sent.");
     }

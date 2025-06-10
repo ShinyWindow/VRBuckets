@@ -3,6 +3,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
+// Prevents an object from being grabbed by more than one interactor at a time.
+// Extends XRGrabInteractable to block secondary grabs while already held.
 public class XRGrabInteractablePreventDoubleGrab : XRGrabInteractable
 {
     public override bool IsSelectableBy(IXRSelectInteractor interactor)

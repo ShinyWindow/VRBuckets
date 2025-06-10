@@ -13,11 +13,12 @@ public partial class GameStateModel
     private int _gameMode;
 
     [RealtimeProperty(2, true, true)]
-    private bool _isGameOver; // ✅ Only need this now
+    private bool _isGameOver;
 
     [RealtimeProperty(3, true, true)]
-    private double _timeAttackStartTime; // ⏱️ Add this line
+    private double _timeAttackStartTime;
+
     [RealtimeProperty(4, true, true)]
-    private double _timeAttackElapsedSeconds; // seconds since start
+    private double _timeAttackElapsedSeconds;
 
 }

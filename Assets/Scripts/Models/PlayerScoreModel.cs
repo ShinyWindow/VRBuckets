@@ -10,5 +10,5 @@ public partial class PlayerScoreModel
     private int _combo;
 
     [RealtimeProperty(3, true, true)]
-    private bool _lastShotScored; // ✅ Add this line
+    private bool _lastShotScored;
 }

@@ -3,6 +3,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
+// Automatically requests ownership of a networked object when it's grabbed using XR interaction.
+// Ensures the local player has control over the object for syncing position and state.
 public class RequestOwnership : MonoBehaviour
 {
     [SerializeField] private RealtimeView realtimeView;
