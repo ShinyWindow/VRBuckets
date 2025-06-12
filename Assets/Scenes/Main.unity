@@ -1552,7 +1552,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\r\u2022 Points are based on where you shoot from:\r\n\u2003\u2013 Inside
-    the key = 1 point\r\n\u2003\u2013 Outside the key = 2 points\r\n\u2003\u2013
+    the box = 1 point\r\n\u2003\u2013 Outside the box = 2 points\r\n\u2003\u2013
     Beyond the 3-point line = 3 points\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14846,7 +14846,7 @@ Transform:
   m_GameObject: {fileID: 5396663426132338223}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9999713, z: -0, w: -0.007580924}
-  m_LocalPosition: {x: 0.001, y: -1.612, z: 0.034}
+  m_LocalPosition: {x: 0.002, y: -1.612, z: 0.11}
   m_LocalScale: {x: 0.16031002, y: 3.1447017, z: 0.16031002}
   m_ConstrainProportionsScale: 0
   m_Children: []
